@@ -1,10 +1,28 @@
 {
-  "name": "Hello Extensions",
-  "description": "Base Level Extension",
-  "version": "1.0",
   "manifest_version": 3,
+  "name": "Copper Golem Walker",
+  "version": "1.0",
+  "description": "Summon a Copper Golem gif that walks across the screen.",
+  "permissions": ["scripting", "activeTab", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "summon-golem": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      },
+      "description": "Summon Copper Golem"
+    }
+  },
   "action": {
-    "default_popup": "hello.html",
-    "default_icon": "hello_extensions.png"
-  }
+    "default_title": "Summon Copper Golem",
+    "default_popup": "hello.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["copper-golem.gif", "copper-golem-work.gif"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }

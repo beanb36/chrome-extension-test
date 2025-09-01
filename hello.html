@@ -1,6 +1,135 @@
 <html>
+  <head>
+    <style>
+      body {
+        background: linear-gradient(135deg, #b87333 0%, #c2884b 100%);
+        color: #fff8e1;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        min-width: 300px;
+      }
+      h1 {
+        text-align: center;
+        color: #ffb74d;
+        text-shadow: 1px 1px 2px #6d3c13;
+      }
+      .toggle-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+      }
+      .toggle-label {
+        margin-left: 8px;
+        font-weight: bold;
+        color: #ffd180;
+      }
+      .toggle-switch {
+        width: 40px;
+        height: 22px;
+        position: relative;
+        display: inline-block;
+      }
+      .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: #a05a2c;
+        border-radius: 22px;
+        transition: .4s;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px; width: 18px;
+        left: 2px; bottom: 2px;
+        background-color: #ffd180;
+        border-radius: 50%;
+        transition: .4s;
+      }
+      input:checked + .slider {
+        background-color: #c2884b;
+      }
+      input:checked + .slider:before {
+        transform: translateX(18px);
+      }
+      #textbox-container {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .textbox-wrapper {
+        position: relative;
+        background: #c2884b;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px #6d3c13a0;
+        padding: 12px 36px 12px 12px;
+        display: flex;
+        align-items: center;
+      }
+      .textbox {
+        width: 100%;
+        padding: 8px;
+        border: none;
+        border-radius: 5px;
+        background: #fff8e1;
+        color: #6d3c13;
+        font-size: 15px;
+        outline: none;
+      }
+      .delete-btn {
+        position: absolute;
+        top: 6px;
+        right: 8px;
+        background: none;
+        border: none;
+        color: #a05a2c;
+        font-size: 18px;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+      .delete-btn:hover {
+        color: #ff7043;
+      }
+      .add-btn {
+        display: block;
+        margin: 18px auto 0 auto;
+        background: #b87333;
+        color: #fff8e1;
+        border: none;
+        border-radius: 6px;
+        padding: 8px 18px;
+        font-size: 15px;
+        cursor: pointer;
+        box-shadow: 0 1px 3px #6d3c13a0;
+        transition: background 0.2s;
+      }
+      .add-btn:hover {
+        background: #c2884b;
+      }
+    </style>
+  </head>
   <body>
-    <h1>Hello Extensions</h1>
+    <h1>Copper Chest</h1>
+    <div style="text-align:center; color:#ffd180; font-size:16px; margin-bottom:16px;">
+      Summon Golem: Ctrl+Shift+Y
+    </div>
+    <div class="toggle-container">
+      <label class="toggle-switch">
+        <input type="checkbox" id="deleteOnSteal">
+        <span class="slider"></span>
+      </label>
+      <span class="toggle-label">Delete on steal</span>
+    </div>
+    <div id="textbox-container"></div>
+    <button class="add-btn" id="addTextbox">+ Add Text Box</button>
     <script src="popup.js"></script>
   </body>
 </html>
