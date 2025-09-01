@@ -1,5 +1,3 @@
-#### This Chrome extension brings the fun of Minecraft to your browsing experience. With a simple keyboard shortcut, you can summon a copper golem to run across your screen. Plus, he'll help you out by "stealing" selected text and saving it for you.
----
 ## How to Use
 Summon the Golem: Press Ctrl+Shift+Y (or Cmd+Shift+Y on Mac) to make a copper golem appear and run across your browser.
 
